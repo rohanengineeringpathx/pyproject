@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
+        stage('Checkout') {
             steps {
                 git 'https://github.com/rohanengineeringpathx/pyproject.git'
             }
@@ -27,13 +27,14 @@ pipeline {
             }
         }
 
-        stage('Run Container') {
+        stage('Deploy Docker Container') {
             steps {
-                bat 'docker stop flask-demo || exit 0'
-                bat 'docker rm flask-demo || exit 0'
-                bat 'docker run -d -p 10000:10000 --name flask-demo flask-demo'
+                bat '''
+                docker stop flask-demo || exit /b 0
+                docker rm flask-demo || exit /b 0
+                docker run -d -p 10000:10000 --name flask-demo flask-demo
+                '''
             }
         }
-
     }
 }
