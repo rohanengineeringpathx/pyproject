@@ -11,29 +11,27 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'pytest'
+                bat 'pytest'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t flask-demo .'
+                bat 'docker build -t flask-demo .'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh '''
-                docker stop flask-demo || true
-                docker rm flask-demo || true
-                docker run -d -p 10000:10000 --name flask-demo flask-demo
-                '''
+                bat 'docker stop flask-demo || exit 0'
+                bat 'docker rm flask-demo || exit 0'
+                bat 'docker run -d -p 10000:10000 --name flask-demo flask-demo'
             }
         }
 
