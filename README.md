@@ -192,19 +192,15 @@ Deploy Container
 
 # 📸 Project Screenshots
 
-## Jenkins Pipeline Success
+![Jenkins Pipeline Overview](screenshots/jenkins-pipeline-overview.jpg)
 
-![Jenkins Pipeline](screenshots/jenkins-success.png)
+![Jenkins Success](screenshots/jenkins-success.jpg)
 
+![Docker Image](screenshots/docker-image.jpg)
 
-## Docker Container Running
+![Docker Container](screenshots/docker-container.jpg)
 
-![Docker Container](screenshots/docker-container.png)
-
-
-## Flask Application Running
-
-![Flask Application](screenshots/application-running.png)
+![Application Running](screenshots/application-running.jpg)
 
 ---
 
