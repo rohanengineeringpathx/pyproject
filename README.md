@@ -32,9 +32,9 @@ GitHub Repository
     ↓
 Jenkins CI/CD Pipeline
     |
-    ├── Install Dependencies
+    ├── Install Python Dependencies
     |
-    ├── Run Automated Tests
+    ├── Run Pytest
     |
     ├── Build Docker Image
     |
@@ -42,6 +42,7 @@ Jenkins CI/CD Pipeline
               |
               ↓
         Flask Application
+        localhost:10000
 ```
 
 ---
